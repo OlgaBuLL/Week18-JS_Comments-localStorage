@@ -1,0 +1,109 @@
+.body {
+  background: #bfa386;
+  color: rgb(56, 46, 36);
+  font-family: Roboto;
+}
+.container {
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+}
+h1 {
+  color: white;
+  margin: 1rem auto;
+  letter-spacing: 0.3rem;
+  font-size: 3.5em;
+  font-weight: 200;
+  text-shadow: 2px -1px 1px rgb(96, 73, 51);
+}
+h1:hover {
+  text-shadow: 3px -3px 3px rgb(96, 73, 51);
+}
+
+#comments-container {
+  width: 40%;
+  height: 250px;
+  margin: 0 auto;
+  text-align: left;
+}
+.author {
+  font-weight: bolder;
+}
+hr {
+  margin: 1rem auto;
+  width: 70%;
+  height: 1px;
+  background: #a78f75;
+  border: none;
+}
+
+.form {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+.userData {
+  font-weight: bolder;
+}
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.enterData {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#author {
+  height: 40px;
+}
+#author,
+textarea {
+  width: 70%;
+  font-family: Roboto;
+  font-size: 1em;
+  color: rgb(56, 46, 36);
+  border-radius: 0.4rem;
+  border: 1px dashed #a78f75;
+  margin-bottom: 1.5rem;
+  margin-right: 4rem;
+  padding-left: 10px;
+}
+
+#author:focus,
+#comment:focus {
+  border: 1.5px solid rgb(81, 66, 52);
+  outline: none;
+}
+
+#author::placeholder,
+#comment::placeholder {
+  color: #a78f75;
+}
+
+#author:hover,
+textarea:hover {
+  transform: scale(1.02);
+}
+
+button {
+  width: 200px;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 350;
+  letter-spacing: 0.04rem;
+  cursor: pointer;
+  background: rgb(81, 66, 52);
+  color: white;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-left: 2rem;
+}
+button:hover {
+  background: rgb(61, 50, 39);
+  box-shadow: 0 0 15px 4px rgba(237, 225, 229, 0.15);
+}
