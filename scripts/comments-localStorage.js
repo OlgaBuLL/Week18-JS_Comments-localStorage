@@ -1,18 +1,14 @@
-let comments = [];
-// let userComment;
+// let comments = [];
 
-function finishTask(sender) {
-  sender.parentElement.classList.toggle("done");
-}
-// function deleteComment() {
-//   optionsString = "";
+// function finishTask(sender) {
+//   sender.parentElement.classList.toggle("done");
 // }
 
 function sendComment() {
   let userComment = checkSpam();
-  comments.push(userComment);
-  generateComments();
-  console.log(comments);
+  // comments.push(userComment);
+  generateComments(userComment);
+  // console.log(comments);
   document.getElementById("comment").value = "";
 }
 
@@ -37,24 +33,32 @@ function checkSpam() {
   return bitchSpam;
 }
 
-function generateComments() {
+function generateComments(comment) {
   let author = document.getElementById("author").value;
-  let userIcon = "https://cdn-icons-png.flaticon.com/512/807/807241.png";
-  if (localStorage.getItem("name") == null) {
+  let picture = document.getElementById("picture").value;
+  if (
+    localStorage.getItem("name") == null &&
+    localStorage.getItem("avatar") == null
+  ) {
     localStorage.setItem("name", author);
+    localStorage.setItem("avatar", picture);
   }
-  let optionsString = "";
-  for (let comment of comments) {
-    // optionsString += `<div><input type="checkbox" onchange="finishTask(this)"><span>${comment}</span><button onchange="deleteComment()">Delete</button></div>`;
-    optionsString += `<div> <img class="userIcon" width=5% src="${userIcon}" alt="user Icon"><span class='author'>${author}:  </span><span>${comment}</span><br></div>`;
-  }
+  // let optionsString = "";
+  // for (let comment of comments) {
+  // optionsString += `<div><input type="checkbox" onchange="finishTask(this)"><span>${comment}</span><button onchange="deleteComment()">Delete</button></div>`;
+  document.getElementById(
+    "comments-container"
+  ).innerHTML += `<div> <img class="avatar" width=30px height=30px src="${picture}" alt="user Icon"><span class='author'>${author}:  </span><span>${comment}</span><br></div>`;
+  // }
 
-  document.getElementById("comments-container").innerHTML = optionsString;
+  // document.getElementById("comments-container").innerHTML = optionsString;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   let name = localStorage.getItem("name");
-  if (name !== null) {
+  let avatar = localStorage.getItem("avatar");
+  if (name !== null && avatar !== null) {
     document.getElementById("author").value = name;
+    document.getElementById("picture").value = avatar;
   }
 });

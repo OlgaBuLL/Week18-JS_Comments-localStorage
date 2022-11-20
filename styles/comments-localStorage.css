@@ -57,10 +57,12 @@ hr {
   width: 100%;
 }
 
-#author {
+#author,
+#picture {
   height: 40px;
 }
 #author,
+#picture,
 textarea {
   width: 70%;
   font-family: Roboto;
@@ -80,11 +82,13 @@ textarea {
 }
 
 #author::placeholder,
+#picture::placeholder,
 #comment::placeholder {
   color: #a78f75;
 }
 
 #author:hover,
+#picture:hover,
 textarea:hover {
   transform: scale(1.02);
 }
